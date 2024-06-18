@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_90sWeatherApp.MainPage"
+             BackgroundColor="White"
+             Title="The Weather Channel">
+            
+
+       <ContentPage.Background>
+           <LinearGradientBrush EndPoint="0,1">
+               <GradientStop Color="Navy" Offset="0.0" />
+               <GradientStop Color="Orange" Offset="1.0" />
+           </LinearGradientBrush>
+       </ContentPage.Background>
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Star4Radar" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="Star3000" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Star3000" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout 
+        BackgroundColor="Navy"
+        HeightRequest="600"
+        WidthRequest="600"
+        Margin="20"
+        Spacing="10">
+        
+        <Label Text="Enter City"
+               FontFamily="Star4Radar"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               HeightRequest="30"/>
+        <Entry x:Name="CityEntry"
+               FontFamily="Star4Radar"
+               Placeholder="City Name"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               HeightRequest="30"/>
+        <Button Text="Get Weather"
+                FontFamily="Star4Radar"
+                Clicked="OnGetWeatherClicked"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="30"/>
+        
+        <Image Source="sunny.gif"
+               HeightRequest="50"
+               WidthRequest="50"
+                HorizontalOptions="Center"
+                IsAnimationPlaying="True"
+               />
+        <Label x:Name="WeatherLabel"
+                FontFamily="Star3000"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+
+        <Label x:Name="WeatherType"
+            FontFamily="Star3000"
+            TextColor="White"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand"/>
+        
+    </StackLayout>
+
+</ContentPage>
